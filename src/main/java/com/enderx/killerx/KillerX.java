@@ -33,7 +33,7 @@ public final class KillerX extends JavaPlugin {
             new PlaceholderHook(this, dbManager).register();
         }
 
-        new UpdateChecker(this, 109561).getLatestVersion(version -> {
+        new UpdateChecker(this, 111951).getLatestVersion(version -> {
             if (this.getDescription().getVersion().equalsIgnoreCase(version)) {
                 Bukkit.getLogger().info("\n\nKillerX is at the latest version\n");
             } else {
