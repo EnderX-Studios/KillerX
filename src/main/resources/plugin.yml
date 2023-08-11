@@ -1,0 +1,7 @@
+name: KillerX
+version: '${project.version}'
+main: com.enderx.killerx.KillerX
+api-version: 1.13
+commands:
+  killerx:
+    description: ""
