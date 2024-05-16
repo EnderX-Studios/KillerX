@@ -6,14 +6,7 @@ The Kill and Death System is a dynamic scoring system designed to enhance the ga
 
 - Kill and Death Scores: The plugin records every kill and death, assigning scores to players based on their performance. This adds a competitive element to the game, encouraging players to strive for more kills while staying alive.
 
-- SQLite Database: The plugin uses a robust SQLite database for storing and managing player scores, ensuring efficiency, reliability, and easy integration into existing Minecraft setups.
-
-# :telephone_receiver: in Coming
-
-In the future we will add commands
-- /killerx setkill <player> <count>
-- /killerx setdeath <player> <count>
-- /killerx setstreak <player> <count>
+- MySQL Database: The plugin uses a robust MySQL database for storing and managing player scores, ensuring efficiency, reliability, and easy integration into existing Minecraft setups.
 
 # :handbag: Placeholder Support
 
