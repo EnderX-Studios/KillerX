@@ -1,3 +1,7 @@
+
+![minecraft_title (1)](https://github.com/EnderX-Studios/KillerX/assets/58370835/70ed02e3-6fc8-4b0a-b90d-331c3cdc863e)
+
+
 # :lock: KillerX
 
 The Kill and Death System is a dynamic scoring system designed to enhance the gameplay experience in Minecraft. It keeps track of both kills and deaths, providing players with scores for each action they take. Additionally, the plugin features a Killstreak system to reward players who maintain a streak of successful kills. The plugin's data management relies on an efficient SQLite database, ensuring seamless performance and reliable score tracking.
