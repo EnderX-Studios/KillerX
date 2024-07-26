@@ -8,10 +8,11 @@
 # by Akari_my and TricolorAsp1209, for bugs contact us on Discord > akari_my, tricolorasp1209
 
 #
-# Put your logins for the Mysql database
+# Put your logins for the MySQL database
 #
 Database:
-  hostname:
+  driver: com.mysql.cj.jdbc.Driver
+  hostname: localhost
   port: 3306
   database:
   user:

@@ -6,3 +6,5 @@ authors: [Akari_my, TricolorAsp1209]
 commands:
   killerx:
     description: ""
+  stats:
+    description: ""

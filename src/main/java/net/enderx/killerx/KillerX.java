@@ -2,6 +2,7 @@ package net.enderx.killerx;
 
 import lombok.Getter;
 import net.enderx.killerx.commands.KillerXCommand;
+import net.enderx.killerx.commands.StatsCommand;
 import net.enderx.killerx.database.DatabaseManager;
 import net.enderx.killerx.listener.PlayerListener;
 import net.enderx.killerx.placeholder.PlaceholderHook;
@@ -17,12 +18,15 @@ public final class KillerX extends JavaPlugin {
 
     @Override
     public void onEnable() {
+
+        getConfig().options().copyDefaults();
+        saveDefaultConfig();
+
         this.mySQL = new MySQL(this);
         this.getMySQL().connect();
         new PlaceholderHook(this).register();
 
         this.manager = new DatabaseManager(this);
-        saveDefaultConfig();
 
         this.getLogger().info("\n§c" +
                 "#    _  ___ _ _            __   __\n" +
@@ -36,6 +40,7 @@ public final class KillerX extends JavaPlugin {
                 "§bby Akari_my and TricolorAsp1209\n" +
                 "github: https://github.com/Akari-my");
         Objects.requireNonNull(getCommand("killerx")).setExecutor(new KillerXCommand(this, manager));
+        Objects.requireNonNull(getCommand("stats")).setExecutor(new StatsCommand(this, manager));
         this.getServer().getPluginManager().registerEvents(new PlayerListener(this), this);
     }
 
