@@ -1,15 +1,17 @@
 #    _  ___ _ _            __   __
 #   | |/ (_| | |           \ \ / /
 #   | ' / _| | | ___ _ __   \ V /
-#   |  < | | | |/ _ | '__|   > <
+#   |  < | | | |/ _ \ '__|   > <
 #   | . \| | | |  __| |     / . \
 #   |_|\_|_|_|_|\___|_|    /_/ \_\
 #
 # by Akari_my and TricolorAsp1209, for bugs contact us on Discord > akari_my, tricolorasp1209
 
-#
-# Put your logins for the MySQL database
-#
+# Configuration for the storage type
+# Options: mysql, yml
+Storage:
+  type: mysql
+
 Database:
   driver: com.mysql.cj.jdbc.Driver
   hostname: localhost
@@ -18,18 +20,14 @@ Database:
   user:
   password:
 
-#
-# Edit the message are inside the " "
-# %player% = Player Name
-# %value% = Value Count
-#
+# Message configuration
 message:
   commands:
-    setKills: "&7You put &e%value% Kills &7on &e%player%"
-    setDeaths: "&7You put &e%value% Deaths &7on &e%player%"
-    setStreak: "&7You put &e%value% KillStreaks &7on &e%player%"
+    setKills: "&7You set &e%value% Kills &7for &e%player%"
+    setDeaths: "&7You set &e%value% Deaths &7for &e%player%"
+    setStreak: "&7You set &e%value% Kill Streaks &7for &e%player%"
   errors:
-    not_value: "&cFill in all missing values"
-    player_not_found: "&cPlayer Not found"
-    console_sender: "&cOnly players can use this command!"
-    player_not_permession: "&cYou do not have permission to use this command"
+    not_value: "&cPlease fill in all required values."
+    player_not_found: "&cPlayer not found."
+    console_sender: "&cThis command can only be used by players!"
+    player_not_permission: "&cYou do not have permission to use this command."

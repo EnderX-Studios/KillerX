@@ -5,7 +5,7 @@ import net.enderx.killerx.KillerX;
 import net.enderx.killerx.commands.arguments.setDeaths;
 import net.enderx.killerx.commands.arguments.setKills;
 import net.enderx.killerx.commands.arguments.setStreak;
-import net.enderx.killerx.database.DatabaseManager;
+import net.enderx.killerx.managers.DatabaseManager;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

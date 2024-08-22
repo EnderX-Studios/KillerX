@@ -1,7 +1,7 @@
 package net.enderx.killerx.commands;
 
 import net.enderx.killerx.KillerX;
-import net.enderx.killerx.database.DatabaseManager;
+import net.enderx.killerx.managers.DatabaseManager;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -31,11 +31,11 @@ public class StatsCommand implements CommandExecutor {
         Player player = (Player) sender;
 
 
-        player.sendMessage("§7Statistics of §c" + player.getName());
+        player.sendMessage("§7Statistics of §e" + player.getName());
         player.sendMessage("");
-        player.sendMessage("§7Kills: §c" + plugin.getDatabase().getKills(player.getUniqueId()));
-        player.sendMessage("§7Deaths: §c" + plugin.getDatabase().getDeaths(player.getUniqueId()));
-        player.sendMessage("§7Streak: §c" + plugin.getDatabase().getKillStreak(player.getUniqueId()));
+        player.sendMessage("§7Kills: §e" + plugin.getImanager().getKills(player.getUniqueId()));
+        player.sendMessage("§7Deaths: §e" + plugin.getImanager().getDeaths(player.getUniqueId()));
+        player.sendMessage("§7Streak: §e" + plugin.getImanager().getKillStreak(player.getUniqueId()));
 
         return false;
     }

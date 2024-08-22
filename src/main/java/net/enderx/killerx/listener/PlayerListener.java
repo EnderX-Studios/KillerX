@@ -21,7 +21,7 @@ public class PlayerListener implements Listener {
     @EventHandler
     public void onJoin(PlayerJoinEvent event){
         UUID playerUUID = event.getPlayer().getUniqueId();
-        plugin.getDatabase().registerPlayer(playerUUID);
+        plugin.getImanager().registerPlayer(playerUUID);
     }
 
     @EventHandler
@@ -33,8 +33,8 @@ public class PlayerListener implements Listener {
             Player killer = player.getKiller();
             UUID playerUUID = player.getUniqueId();
 
-            plugin.getDatabase().addDeath(playerUUID);
-            plugin.getDatabase().setKillStreak(playerUUID, 0);
+            plugin.getImanager().addDeath(playerUUID);
+            plugin.getImanager().setKillStreak(playerUUID, 0);
 
             if (killer == null) {
                 return;
@@ -42,8 +42,8 @@ public class PlayerListener implements Listener {
 
             UUID killerUUID = killer.getUniqueId();
 
-            plugin.getDatabase().addKill(killerUUID);
-            plugin.getDatabase().addKillStreak(killerUUID);
+            plugin.getImanager().addKill(killerUUID);
+            plugin.getImanager().addKillStreak(killerUUID);
         }
     }
 }

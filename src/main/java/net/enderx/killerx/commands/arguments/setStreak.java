@@ -25,7 +25,7 @@ public class setStreak implements SubCommand {
 
         OfflinePlayer target = Bukkit.getOfflinePlayer(args[0]);
 
-        if (!plugin.getDatabase().isRegistered(target)) {
+        if (!plugin.getImanager().isRegistered(target)) {
             sender.sendMessage(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("message.errors.player_not_found")));
             return;
         }
@@ -33,7 +33,7 @@ public class setStreak implements SubCommand {
         try {
             int value = Integer.parseInt(args[1]);
 
-            plugin.getDatabase().setKillStreak(target.getUniqueId(), value);
+            plugin.getImanager().setKillStreak(target.getUniqueId(), value);
             sender.sendMessage(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("message.commands.setStreak").replace("%player%", target.getName()).replace("%value%", String.valueOf(value))));
 
         } catch (NumberFormatException x) {
