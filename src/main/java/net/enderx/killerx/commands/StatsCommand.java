@@ -8,6 +8,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import java.util.UUID;
 
 
 public class StatsCommand implements CommandExecutor {
@@ -18,7 +19,6 @@ public class StatsCommand implements CommandExecutor {
     public StatsCommand(KillerX plugin, DatabaseManager manager){
         this.plugin = plugin;
         this.manager = manager;
-
     }
 
     @Override
@@ -30,12 +30,19 @@ public class StatsCommand implements CommandExecutor {
 
         Player player = (Player) sender;
 
+        double kills = plugin.getImanager().getKills(player.getUniqueId());
+        double deaths = plugin.getImanager().getDeaths(player.getUniqueId());
+
+        if(deaths==0)deaths=1;
+        double kd = kills/deaths;
+
 
         player.sendMessage("§7Statistics of §e" + player.getName());
         player.sendMessage("");
         player.sendMessage("§7Kills: §e" + plugin.getImanager().getKills(player.getUniqueId()));
         player.sendMessage("§7Deaths: §e" + plugin.getImanager().getDeaths(player.getUniqueId()));
         player.sendMessage("§7Streak: §e" + plugin.getImanager().getKillStreak(player.getUniqueId()));
+        player.sendMessage("§7KD: §e" + kd);
 
         return false;
     }

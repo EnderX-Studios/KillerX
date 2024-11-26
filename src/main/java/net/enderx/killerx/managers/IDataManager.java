@@ -1,11 +1,8 @@
 package net.enderx.killerx.managers;
 
-import lombok.SneakyThrows;
 import org.bukkit.OfflinePlayer;
 
 import java.util.UUID;
-
-
 
 public interface IDataManager {
 
